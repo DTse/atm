@@ -12,7 +12,7 @@ interface IDialerProps {
   onSubmit: Function;
 }
 
-const NumberSet: Array<unknown> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, -1];
+const NumberSet: Array<unknown> = [1, 2, 3, 4, 5, 6, 7, 8, 9, null, 0, -1];
 
 const Dialer: FC<IDialerProps> = ({
   amount,
@@ -28,7 +28,7 @@ const Dialer: FC<IDialerProps> = ({
     <Paper className={classes.root}>
       <GridList cellHeight={60} className={classes.gridList} cols={3}>
         {NumberSet.map(tile => (
-          <GridListTile key={`button-grid-tile-${tile as number}`} cols={1}>
+          <GridListTile key={`button-grid-tile-${tile ? tile as number : '4545'}`} cols={1}>
             <DialerButton
               value={tile as number}
               label={tile as string}
