@@ -7,8 +7,8 @@ export const useDialerStyles = makeStyles((theme: Theme) =>
       flexWrap: "wrap",
       justifyContent: "center",
       alignItems: "center",
-      maxWidth: 250,
-      padding: "10px 25px",
+      maxWidth: 280,
+      padding: "15px 20px",
       backgroundColor: theme.palette.background.paper,
       boxShadow: "0px 0px 30px 1px rgba(0,0,0,.1)",
       "-webkit-box-shadow": "0px 0px 30px 1px rgba(0,0,0,.1)",
@@ -16,7 +16,18 @@ export const useDialerStyles = makeStyles((theme: Theme) =>
     },
     gridList: {
       width: "100%",
-      height: 320
+      height: 300
+    },
+    gridListTiletile: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    },
+    withDrawGridTile: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "flex-end",
+      flexDirection: "column"
     }
   })
 );

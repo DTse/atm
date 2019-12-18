@@ -5,6 +5,8 @@ import { Paper, GridList, GridListTile } from "@material-ui/core";
 import DialerButton from "components/DialerButton";
 
 import { useDialerStyles } from "./useDialerStyles";
+import WithDrawButton from "components/WithDrawButton";
+import AmountInput from "components/AmountInput";
 
 interface IDialerProps {
   amount: number;
@@ -22,13 +24,20 @@ const Dialer: FC<IDialerProps> = ({
   const classes = useDialerStyles();
 
   const handleClick = ({ value }: { value: number }): void =>
-    console.log(value);
+    onChange({ withdrawAmount: value });
 
   return (
     <Paper className={classes.root}>
+      <AmountInput value={amount} />
       <GridList cellHeight={60} className={classes.gridList} cols={3}>
         {NumberSet.map(tile => (
-          <GridListTile key={`button-grid-tile-${tile ? tile as number : '4545'}`} cols={1}>
+          <GridListTile
+            classes={{ tile: classes.gridListTiletile }}
+            key={`button-grid-tile-${
+              tile ? (tile as number) : tile === null ? "empty" : "back"
+            }`}
+            cols={1}
+          >
             <DialerButton
               value={tile as number}
               label={tile as string}
@@ -37,6 +46,7 @@ const Dialer: FC<IDialerProps> = ({
           </GridListTile>
         ))}
       </GridList>
+      <WithDrawButton onClick={onSubmit} />
     </Paper>
   );
 };
