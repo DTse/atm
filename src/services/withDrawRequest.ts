@@ -18,7 +18,7 @@ export const withDrawRequest = (amount: number): Promise<object> => {
         { amount: amount },
         {
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Content-Type": "application/json"
           },
           cancelToken: new CancelToken(e => {
             cancel = e;
