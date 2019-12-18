@@ -8,14 +8,14 @@ let cancel: any;
  * @param {array} params
  * @return {element}
  **/
-export const withDrawRequest = (amount: number): Promise<object> => {
+export const withDrawRequest = (amount: string): Promise<object> => {
   cancel && cancel();
 
-  return new Promise((resolve, reject): void => {
+  return new Promise((resolve): void => {
     axios
       .post(
         `https://us-central1-atm-backend-2cc1b.cloudfunctions.net/withdraw`,
-        { amount: amount },
+        { amount: amount === "0" ? null : amount },
         {
           headers: {
             "Content-Type": "application/json"
@@ -29,14 +29,14 @@ export const withDrawRequest = (amount: number): Promise<object> => {
         if (res.status === 200) {
           resolve({
             status: "success",
-            bankNotes: [...res.data]
+            bankNotes: [...res.data] as string[]
           });
         } else {
-          reject({ status: "fail" });
+          resolve({ status: "fail", body: res.data });
         }
       })
       .catch(error => {
-        reject({ status: "fail", body: error });
+        resolve({ status: "fail", body: error.response.data });
       });
   });
 };
