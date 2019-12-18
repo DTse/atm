@@ -8,6 +8,11 @@ interface IWithDrawButtonProps {
   onClick: Function;
 }
 
+/**
+ * Create the withdraw button component.
+ * @param {function} onClick
+ * @return {JSX.Element} <WithDrawButton>
+ **/
 const WithDrawButton: SFC<IWithDrawButtonProps> = ({
   onClick
 }): JSX.Element => {

@@ -16,6 +16,13 @@ interface IDialerProps {
 
 const NumberSet: Array<unknown> = [1, 2, 3, 4, 5, 6, 7, 8, 9, null, 0, -1];
 
+/**
+ * Synthesize the dialer.
+ * @param {string} amount
+ * @param {function} onChange
+ * @param {function} onSubmit
+ * @return {JSX.Element} <Dialer>
+ **/
 const Dialer: FC<IDialerProps> = ({
   amount,
   onChange,

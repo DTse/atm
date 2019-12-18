@@ -13,6 +13,10 @@ type DialerProps = {
   withdrawAmount: string;
 };
 
+/**
+ * Create the main inteface.
+ * @return {JSX.Element} <App>
+ **/
 const App: FC = () => {
   const classes = useAppStyles();
   const [amount, setAmount] = useState<string>("0");

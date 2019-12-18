@@ -6,6 +6,12 @@ interface INumberFormatCustomProps {
   onChange: (event: { target: { value: string } }) => void;
 }
 
+/**
+ * Create the input from the react-number-format.
+ * @param {any} inputRef
+ * @param {function} onChange
+ * @return {JSX.Element} <NumberFormatCustom>
+ **/
 const NumberFormatCustom: SFC<INumberFormatCustomProps> = (
   props
 ): JSX.Element => {

@@ -34,6 +34,12 @@ interface IBankNotesListProps {
   };
 }
 
+/**
+ * Create the bank notes list.
+ * @param {array} bankNotes
+ * @param {object} classes
+ * @return {JSX.Element} <App>
+ **/
 const BankNotesList: SFC<IBankNotesListProps> = ({
   bankNotes,
   classes
@@ -50,6 +56,14 @@ const BankNotesList: SFC<IBankNotesListProps> = ({
   );
 };
 
+/**
+ * Create the modal for displaying the withdraw result.
+ * @param {array} bankNotes
+ * @param {function} onClose
+ * @param {string} error
+ * @param {boolean} open
+ * @return {JSX.Element} <ResponseModal>
+ **/
 const ResponseModal: SFC<IResponseModal> = ({
   bankNotes,
   onClose,

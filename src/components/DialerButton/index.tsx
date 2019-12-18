@@ -11,6 +11,13 @@ interface IDialerButtonProps {
   onClick?: Function;
 }
 
+/**
+ * Dialer round button component.
+ * @param {number} value
+ * @param {string} value
+ * @param {function} onClick
+ * @return {JSX.Element} <DialerButton>
+ **/
 const DialerButton: SFC<IDialerButtonProps> = ({
   value,
   label,

@@ -8,7 +8,11 @@ import { useAmountInputStyles } from "./useAmountInputStyles";
 interface IDialerButtonProps {
   value: string;
 }
-
+/**
+ * Create the dialer input component.
+ * @param {string} value
+ * @return {JSX.Element} <AmountInput>
+ **/
 const AmountInput: SFC<IDialerButtonProps> = ({ value }): JSX.Element => {
   const classes = useAmountInputStyles();
 
