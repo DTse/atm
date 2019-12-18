@@ -7,7 +7,7 @@ export const useAppStyles = makeStyles((theme: Theme) =>
       flexWrap: "wrap",
       justifyContent: "center",
       alignItems: "center",
-      width: "100vw",
+      width: "100%",
       height: "100vh"
     }
   })

@@ -17,7 +17,7 @@ const DialerButton: SFC<IDialerButtonProps> = ({
   onClick
 }): JSX.Element => {
   const classes = useDialerButtonStyles();
-  return (
+  return value !== null ? (
     <Fab
       aria-label={label}
       className={classes.root} //hover color #e0e0e0
@@ -25,6 +25,8 @@ const DialerButton: SFC<IDialerButtonProps> = ({
     >
       {value === -1 ? <BackspaceOutlinedIcon /> : label}
     </Fab>
+  ) : (
+    <div></div>
   );
 };
 

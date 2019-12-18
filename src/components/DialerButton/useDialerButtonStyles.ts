@@ -7,13 +7,10 @@ export const useDialerButtonStyles = makeStyles((theme: Theme) =>
     root: {
       boxShadow: "none",
       backgroundColor: grey[100],
+      fontSize: 17,
       "&:hover": {
         backgroundColor: grey[300]
       }
-    },
-    gridList: {
-      width: "100%",
-      height: 350
     }
   })
 );

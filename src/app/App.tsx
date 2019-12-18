@@ -1,5 +1,7 @@
 import React, { FC, useState } from "react";
 
+import CssBaseline from "@material-ui/core/CssBaseline";
+
 import Dialer from "components/Dialer";
 import ResponseModal from "components/ResponseModal";
 
@@ -17,7 +19,8 @@ const App: FC = () => {
   const [bankNotes, setBankNotes] = useState([]);
 
   const handleChange = ({ withdrawAmount }: DialerProps): void => {
-    setAmount(withdrawAmount);
+    var inputToNumber = Number("" + amount + withdrawAmount);
+    setAmount(inputToNumber);
   };
 
   const handleWithDraw = (): void => {
@@ -32,12 +35,13 @@ const App: FC = () => {
 
   return (
     <div className={classes.root}>
+      <CssBaseline />
       <Dialer
         amount={amount}
         onChange={handleChange}
         onSubmit={handleWithDraw}
       />
-      {/* <ResponseModal bankNotes={bankNotes} onClose={handleModalClose} /> */}
+      <ResponseModal bankNotes={bankNotes} onClose={handleModalClose} />
     </div>
   );
 };
