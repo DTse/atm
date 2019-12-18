@@ -6,7 +6,7 @@ import NumberFormatCustom from "./NumberFormat";
 import { useAmountInputStyles } from "./useAmountInputStyles";
 
 interface IDialerButtonProps {
-  value: number;
+  value: string;
 }
 
 const AmountInput: SFC<IDialerButtonProps> = ({ value }): JSX.Element => {

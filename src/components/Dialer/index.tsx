@@ -9,7 +9,7 @@ import WithDrawButton from "components/WithDrawButton";
 import AmountInput from "components/AmountInput";
 
 interface IDialerProps {
-  amount: number;
+  amount: string;
   onChange: Function;
   onSubmit: Function;
 }
@@ -40,7 +40,7 @@ const Dialer: FC<IDialerProps> = ({
           >
             <DialerButton
               value={tile as number}
-              label={tile as string}
+              label={String(tile)}
               onClick={handleClick}
             />
           </GridListTile>

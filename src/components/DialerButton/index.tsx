@@ -21,7 +21,7 @@ const DialerButton: SFC<IDialerButtonProps> = ({
     <Fab
       aria-label={label}
       className={classes.root} //hover color #e0e0e0
-      onClick={() => onClick && onClick({ value: value })}
+      onClick={() => onClick && onClick({ value: label })}
     >
       {value === -1 ? <BackspaceOutlinedIcon /> : label}
     </Fab>
